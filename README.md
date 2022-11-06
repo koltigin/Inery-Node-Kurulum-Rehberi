@@ -137,13 +137,13 @@ cd;  cline wallet create --file CUZDAN_ADINIZ.txt
 🔴 **Cüdan Adını Değiştiriyoruz.**
 ```
 cd $HOME/inery-wallet
-mv default.wallet koltigin.wallet
+mv default.wallet CUZDAN_ADINIZ.wallet
 ```
 
 ### Cüzdan Kilidini Açma
 Aşağıdaki koddan sonra size şifrenizi soracak. Sifreniz yukarıda oluşturduğumuz dosyanın içerisinde yer alıyor. Şifrenizi yazdığınızda gözükmez.
 ```
-cline wallet unlock --password
+cline wallet unlock -n CUZDAN_ADINIZ
 ```
 
 ### Cüzdanımızı Import Ediyoruz
@@ -177,7 +177,7 @@ Serverınıza bağlandığınızda herhangi bir işlem yapmadan önce aşağıda
 source .bashrcd
 ```
 ```
-cline wallet unlock --password
+cline wallet unlock -n CUZDAN_ADINIZ
 ```
 
 ## Bakiye Kontrol Etme
