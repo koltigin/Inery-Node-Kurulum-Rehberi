@@ -167,7 +167,7 @@ cline system makeprod approve ACCOUNT_NAME ACCOUNT_NAME
 
 ### Master Node'unuzu Kontrol Etme
 [Buradaki](https://explorer.inery.io/) adresten adınızı aratınız. 
-🔴 **Adınızı gördükten sonra kullanıcı panelinize giderek `Master Approval` başlıklı birinci görevi onaylayınız.*
+🔴 **Adınızı gördükten sonra kullanıcı panelinize giderek `Master Approval` başlıklı birinci görevi onaylayınız.**
 
 # Notlar
 
