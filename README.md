@@ -49,9 +49,10 @@ Sonraki adımda ise son ekranımız gelecek vu burada `Done` butonuna tıklayara
 ![Ekran Alıntısı4](https://user-images.githubusercontent.com/102043225/200176984-8fe6e6ce-0b20-4f8a-94d6-d93230122952.JPG)
 
 ## Root Yetkisi Alma
-
+```
 sudo su
 cd
+```
 
 ## Sistemi Güncelleme
 ```
@@ -167,3 +168,26 @@ cline system makeprod approve ACCOUNT_NAME ACCOUNT_NAME
 ### Master Node'unuzu Kontrol Etme
 [Buradaki](https://explorer.inery.io/) adresten adınızı aratınız. 
 🔴 **Adınızı gördükten sonra kullanıcı panelinize giderek `Master Approval` başlıklı birinci görevi onaylayınız.*
+
+# Notlar
+
+## Cüzdan Kilidini Açma
+Serverınıza bağlandığınızda herhangi bir işlem yapmadan önce aşağıdaki kodu kullanarak değişkenleri yükleyiniz yoksa cline not found uyarısı alır işlemlerinizi yapamazsınız.
+```
+cline wallet unlock --password
+```
+
+## Bakiye Kontrol Etme
+`ACCOUNT_NAME` hesap adınız.
+```
+cline get currency balance inery.token ACCOUNT_NAME
+```
+
+## Node'u Silme
+```
+cd inery-node/inery.setup/master.node
+./stop.sh
+rm inery-node -rf
+rm inery-wallet -rf
+pkill nodine
+```
