@@ -1,4 +1,5 @@
 # Görev 2: Make your own currency and transfer to someone
+**Kendi tokeninizi oluşturma ve başkalarına gönderme**
 
 ## Root Yetkisi Alma
 ```
