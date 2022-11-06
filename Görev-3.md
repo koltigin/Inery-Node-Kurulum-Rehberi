@@ -153,5 +153,5 @@ cline push action $IneryAccname destroy [1] -p $IneryAccname -j
 ```
 
 
-🔴 **İşlemleri gerçekleştirdikten sonra kullanıcı paneline giderek `Create Your Value Contract` başlıklı üçüncü görevi onaylayınız.***
+🔴 **İşlemleri gerçekleştirdikten sonra kullanıcı paneline giderek `Create Your Value Contract` başlıklı üçüncü görevi onaylayınız.**
 
