@@ -172,7 +172,10 @@ cline system makeprod approve ACCOUNT_NAME ACCOUNT_NAME
 # Notlar
 
 ## Cüzdan Kilidini Açma
-Serverınıza bağlandığınızda herhangi bir işlem yapmadan önce aşağıdaki kodu kullanarak değişkenleri yükleyiniz yoksa cline not found uyarısı alır işlemlerinizi yapamazsınız.
+Serverınıza bağlandığınızda herhangi bir işlem yapmadan önce aşağıdaki kodları kullanarak önce değişkenleri yükleyiniz yoksa cline not found uyarısı alır işlemlerinizi yapamazsınız sonrasında ise cüzdanınızın kilidini açınız. 
+```
+source .bashrcd
+```
 ```
 cline wallet unlock --password
 ```
