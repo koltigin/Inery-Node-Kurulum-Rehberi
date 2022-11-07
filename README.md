@@ -190,6 +190,7 @@ cline get currency balance inery.token ACCOUNT_NAME
 ```
 cd inery-node/inery.setup/master.node
 ./stop.sh
+cd
 rm inery-node -rf
 rm inery-wallet -rf
 pkill nodine
