@@ -122,6 +122,11 @@ Iner adında bir screen açıyoruz ve master komutu ile node'u başlatıyoruz.
 screen -S inery
 ./ine.py --master
 ```
+Loglara bakıyoruz.
+```
+cd master.node/blockchain
+tail -f nodine.log
+```
 🔴 **Yukarıdaki ekrandan çıkarken `ctrl a d` tuşluyoruz. Bu ekranı arada bir kontrol ediyoruz. Çıktığınız ekrana yeniden girmek için bu sefer `screen -r inery` yazıyoruz.**
 
 
