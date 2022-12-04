@@ -37,12 +37,11 @@ cline set abi YourAccountName token.abi
 
 ## Token Oluşturma
 `HESAP_ADINIZ`hesap adınızı yazıyorsunuz.
-`TOKEN_MIKTARI` token miktarını buna benzer bir şekilde yazıyorsunuz; 555000.0000
 `TOKEN_KODU` buraya da tokeninizin adını yazıyorsunuz. Türkçe karakter kullnmayınız.
 `TOKEN_ACIKLAMASI` bu bölüme Türkçe karakter kullanmadan açıklama yazabilirsiniz.
 
 ```
-cline push action inery.token create '["HESAP_ADINIZ", "TOKEN_MIKTARI TOKEN_KODU"], "TOKEN_ACIKLAMASI"]'-p HESAP_ADINIZ
+cline push action inery.token create '["HESAP_ADINIZ", "555000.0000 TOKEN_KODU" , "TOKEN_ACIKLAMASI"]' -p HESAP_ADINIZ
 ```
 Aşağıdaki örnekteki gibi yazıyoruz:
 ```
