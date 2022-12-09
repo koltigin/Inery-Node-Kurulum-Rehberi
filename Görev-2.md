@@ -42,7 +42,7 @@ cline set abi YourAccountName token.abi
 `TOKEN_ACIKLAMASI` bu bölüme Türkçe karakter kullanmadan açıklama yazabilirsiniz.
 
 ```
-cline push action inery.token create '["HESAP_ADINIZ", "TOKEN_MIKTARI TOKEN_KODU"], "TOKEN_ACIKLAMASI"]'-p HESAP_ADINIZ
+cline push action inery.token create '["HESAP_ADINIZ", "TOKEN_MIKTARI TOKEN_KODU"], "TOKEN_ACIKLAMASI"]' -p HESAP_ADINIZ
 ```
 Aşağıdaki örnekteki gibi yazıyoruz:
 ```
