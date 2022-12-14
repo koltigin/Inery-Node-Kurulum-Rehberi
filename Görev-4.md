@@ -62,11 +62,6 @@ cp .env-sample .env
 ```
 nano .env
 ```
-```
-INERY_ACCOUNT="koltigin"
-PRIVATE_KEY="$KEY"
-NODE_URL="http://194.163.159.100:8888"
-```
 
 ## 8888 Port Açma 
 
