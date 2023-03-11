@@ -117,5 +117,87 @@ chmod +x snapshots.sh
 ./snapshots.sh
 ```
 
+# Node'u Başlatma ve Loglara Bakma 
+Tekrar daha önce açtığımız screen içine giriyoruz.
+```
+screen -r inery
+```
+Ardından loglara bakıyoruz.
+```
+cd master.node/blockchain
+tail -f nodine.log
+```
+
+🔴 **Bloklar eşitlenmeden diğer adımlara geçmiyoruz**
+
+## **Görev 1:** Master Node Kaydetme
+
+### Cüzdan Şifresi Oluşturma
+`CUZDAN_ADINIZ` yazan yere Inery kullanıcı adımızı yazıyoruz. root dizininde oluşan bu dosya içerisinde cüzdan şifreniz oluşacak. 
+```
+cd;  cline wallet create --file CUZDAN_ADINIZ.txt
+```
+🔴 **Cüdan Adını Değiştiriyoruz.**
+```
+cd $HOME/inery-wallet
+mv default.wallet CUZDAN_ADINIZ.wallet
+```
+
+### Cüzdan Kilidini Açma
+Aşağıdaki koddan sonra size şifrenizi soracak. Sifreniz yukarıda oluşturduğumuz dosyanın içerisinde yer alıyor. Şifrenizi yazdığınızda gözükmez.
+```
+cline wallet unlock -n CUZDAN_ADINIZ
+```
+
+### Cüzdanımızı Import Ediyoruz
+`ACCOUNT_PRIVATE_KEY` bölümüne panelimizde bulunan keyi yazıyoruz.
+```
+cline wallet import --private-key ACCOUNT_PRIVATE_KEY
+```
+
+### Hesap Kaydını Yapma
+`ACCOUNT_NAME` hesap adınız.
+`ACCOUNT_PUBLIC_KEY` kullanıcı panelinizde bulunuyor
+`SERVER_IP_ADDRESS` server IP adresiniz.
+```
+cline master bind ACCOUNT_NAME ACCOUNT_PUBLIC_KEY SERVER_IP_ADDRESS:9010
+```
+
+### Hesap Onaylama
+`ACCOUNT_NAME` hesap adınız.
+```
+cline master approve ACCOUNT_NAME
+```
+
+### Master Node'unuzu Kontrol Etme
+[Buradaki](https://explorer.inery.io/) adresten adınızı aratınız. 
+🔴 **Adınızı gördükten sonra kullanıcı panelinize giderek `Master Approval` başlıklı birinci görevi onaylayınız.**
+
+# Notlar
+
+## Cüzdan Kilidini Açma
+Serverınıza bağlandığınızda herhangi bir işlem yapmadan önce aşağıdaki kodları kullanarak önce değişkenleri yükleyiniz yoksa cline not found uyarısı alır işlemlerinizi yapamazsınız sonrasında ise cüzdanınızın kilidini açınız. 
+```
+source .bashrcd
+```
+```
+cline wallet unlock -n CUZDAN_ADINIZ
+```
+
+## Bakiye Kontrol Etme
+`ACCOUNT_NAME` hesap adınız.
+```
+cline get currency balance inery.token ACCOUNT_NAME
+```
+
+## Node'u Silme
+```
+cd inery-node/inery.setup/master.node
+./stop.sh
+cd
+rm inery-node -rf
+rm inery-wallet -rf
+pkill nodine
+```
 
 
