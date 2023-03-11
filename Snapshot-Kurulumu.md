@@ -45,7 +45,7 @@ Açılan dosyada aşağıdaki yerleri kendinize göre dolduruyorusunuz.
 🔴 **Dosyamızı `ctrl x y enter` diyerek kaydediyoruz.**
 
 ## Node'u Başlatma
-Iner adında bir screen açıyoruz ve master komutu ile node'u başlatıyoruz.
+Inery adında bir screen açıyoruz ve master komutu ile node'u başlatıyoruz.
 ```
 screen -S inery
 ./ine.py --master
@@ -114,6 +114,7 @@ echo $! > $DATADIR"/ined.pid"
 
 ```
 chmod +x snapshots.sh
+cd; source .bashrc; cd -
 ./snapshots.sh
 ```
 
