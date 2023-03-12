@@ -57,9 +57,9 @@ screen -S inery
 :rotating_light:	:warning: :warning: Aşağıdaki kodda `snapshot-` ile başlayıp `.bin`ile başlayan dosyayı bu [adresten](https://snapshot.inery.io/) kontrol edin. Gerekirse günceliyle değiştirin. :warning: :warning: :rotating_light:
 ```
 cd
-curl -L https://snapshot.inery.io/snaps/snapshot-0078027ea3001d094a20c4846c791fd0b586fecb6139094f7917bb34df12dcbf.bin > inery_snap.bin
-chmod +x inery_snap.bin
-sudo mv inery_snap.bin $HOME/inery-node/inery.setup/master.node/blockchain/data/snapshots/
+curl -k https://snapshot.inery.io/snaps/snapshot-00781dabfa0f56e42e5811f602d2cece3766879f6b4009e111c723d7c8941743.bin -o snapshot-00781dabfa0f56e42e5811f602d2cece3766879f6b4009e111c723d7c8941743.bin
+chmod +x snapshot-00781dabfa0f56e42e5811f602d2cece3766879f6b4009e111c723d7c8941743.bin
+sudo mv snapshot-00781dabfa0f56e42e5811f602d2cece3766879f6b4009e111c723d7c8941743.bin $HOME/inery-node/inery.setup/master.node/blockchain/data/snapshots/
 ```
 
 Aşağıdaki kodları girerek `snapshots.sh` dosyasının içeriğini dolduruyoruz.
@@ -67,8 +67,8 @@ Aşağıdaki kodları girerek `snapshots.sh` dosyasının içeriğini dolduruyor
 cd $HOME/inery-node/inery.setup/master.node/
 nano snapshots.sh
 ```
-Dosya içeriğini doldurmadan önce aşağıdaki kodu not defterine yapıştırıp değişmesi gereken yerlere kendi bilgilerinizi girin. Aşağıdaki kodda `#BURASI DUZENLENECEK` yazan yerleri düzenleme yaparken silersiniz.
-
+Dosya içeriğini doldurmadan önce aşağıdaki kodu not defterine yapıştırıp değişmesi gereken yerlere kendi bilgilerinizi girin. Aşağıdaki kodda `# BURASI DUZENLENECEK` yazan yerleri düzenleme yaparken silersiniz.
+* `snapshot-` ile başlayıp `.bin`ile başlayan dosyayı değiştiriyoruz
 * NODE_ADINIZ 
 * DNS_IP_ADRESINIZ
 * PUBLIC_KEY
@@ -81,7 +81,7 @@ if [ ! -d $DATADIR ]; then
     mkdir -p $DATADIR;
 fi
 
-nodine --snapshot $DATADIR"/data/snapshots/inery_snap.bin" \
+nodine --snapshot $DATADIR"/data/snapshots/snapshot-00781dabfa0f56e42e5811f602d2cece3766879f6b4009e111c723d7c8941743.bin" \ # BURASI DUZENLENECEK
 --plugin inery::producer_plugin \
 --plugin inery::producer_api_plugin \
 --plugin inery::chain_plugin \
@@ -100,11 +100,11 @@ nodine --snapshot $DATADIR"/data/snapshots/inery_snap.bin" \
 --verbose-http-errors \
 --p2p-max-nodes-per-host 100 \
 --connection-cleanup-period 10 \
---master-name NODE_ADINIZ \ #BURASI DUZENLENECEK
+--master-name NODE_ADINIZ \ # BURASI DUZENLENECEK
 --http-server-address 0.0.0.0:8888 \
---p2p-listen-endpoint DNS_IP_ADRESINIZ:9010 \ #BURASI DUZENLENECEK
+--p2p-listen-endpoint DNS_IP_ADRESINIZ:9010 \ # BURASI DUZENLENECEK
 --p2p-peer-address tas.blockchain-servers.world:9010 \
---signature-provider PUBLIC_KEY=KEY:PRIVATE_KEY \ #BURASI DUZENLENECEK
+--signature-provider PUBLIC_KEY=KEY:PRIVATE_KEY \ # BURASI DUZENLENECEK
 --p2p-peer-address sys.blockchain-servers.world:9010 \
 --p2p-peer-address master1.blockchain-servers.world:9010 \
 --p2p-peer-address master2.blockchain-servers.world:9010 \
