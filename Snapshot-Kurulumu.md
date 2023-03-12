@@ -54,7 +54,7 @@ screen -S inery
 🔴 **Bu aşamadan sonra screen'den `ctrl a d` diyerek çıkıyoruz ve snapshot yükleme adımına geçiyoruz.**
 
 ## Snaphot Yükleme :warning:
-:rotating_light:	:warning: :warning: Aşağıdaki kodda `snapshot-` ile başlayıp `.bin`ile başlayan dosyayı bu [adresten](https://snapshot.inery.io/) kontrol edin. Gerekirse günceliyle değiştirin. :warning: :warning: :rotating_light:
+:rotating_light:	:warning: :warning: Aşağıdaki kodda `snapshot-` ile başlayıp `.bin`ile başlayan dosyayı bu [adresten](https://snapshot.inery.io/) kontrol edin. Günceliyle değiştirin. :warning: :warning: :rotating_light:
 ```
 cd
 curl -k https://snapshot.inery.io/snaps/snapshot-00781dabfa0f56e42e5811f602d2cece3766879f6b4009e111c723d7c8941743.bin -o snapshot-00781dabfa0f56e42e5811f602d2cece3766879f6b4009e111c723d7c8941743.bin
